@@ -6,4 +6,17 @@ const movies = [
   { title: "Interstellar", genre: "Sci-Fi", rating: 8.6 }
 ];
 
-// Start coding here...
+
+const topRatedMovies = movies.filter(movie => movie.rating >= 8);
+console.log("Top Rated Movies:", topRatedMovies);
+
+
+const formattedTitles = movies.map(movie => `${movie.title} (${movie.genre}) - ${movie.rating} ⭐`);
+console.log("Formatted Titles:", formattedTitles);
+
+
+const recommend = (movie, minRating = 8) => movie.rating >= minRating;
+
+
+console.log("Is 'Frozen' recommended?", recommend(movies[1]));     // false
+console.log("Is 'Inception' recommended?", recommend(movies[0]));  // true
