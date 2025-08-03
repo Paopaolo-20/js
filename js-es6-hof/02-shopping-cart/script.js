@@ -5,4 +5,14 @@ const cart = [
   { name: "Pencil", price: 10, quantity: 5 }
 ];
 
-// Start coding here...
+
+const itemTotals = cart.map(item => item.price * item.quantity);
+console.log("Item Totals:", itemTotals);
+
+
+const descriptions = cart.map(item => `${item.name} - ₱${item.price}`);
+console.log("Descriptions:", descriptions);
+
+
+const totalCartValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+console.log(`Total Cart Value: ₱${totalCartValue}`);
